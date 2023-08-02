@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "../css/All.css"
 
 const ProductComponent = () => {
   const products = useSelector((state) => state.allProducts.products);

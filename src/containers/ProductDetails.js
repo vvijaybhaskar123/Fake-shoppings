@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "../css/All.css"
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectedProduct,
