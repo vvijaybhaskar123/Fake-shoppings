@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 import "../App.css";
 
 const ProductComponent = () => {
@@ -12,6 +15,29 @@ const ProductComponent = () => {
     setData(products);
   }, [products]);
 
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        stars.push(
+          <i
+            key={i}
+            className="star fas fa-star"
+            style={{ color: "goldenrod" }} 
+          ></i>
+        ); 
+      } else {
+        stars.push(
+          <i
+            key={i}
+            className="star far fa-star"
+            style={{ color: "goldenrod" }} 
+          ></i>
+        ); 
+      }
+    }
+    return stars;
+  };
   return (
     <div>
    <h1 style={{ marginLeft: '150px',marginBottom:'30px' }}>Products For You</h1>
@@ -34,6 +60,7 @@ const ProductComponent = () => {
             <div className="product-card" key={index}>
               <Link to={`/product/${id}`}>
                 <div className="image">
+                
                   <img src={image} alt={title} />
                 </div>
                 <div className="content">
@@ -42,7 +69,7 @@ const ProductComponent = () => {
                   {/* <div className="meta">Description: {description}</div> */}
                   <div className="meta-price">${price}</div>
                   <div className="meta">
-                     {rating.rate} 
+                  {renderStars(rating.rate)}
                   </div>
                 </div>
               </Link>

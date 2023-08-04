@@ -23,6 +23,22 @@
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+.product-card .image {
+  position: relative;
+}
+.heart-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: black;
+  font-size: 24px; 
+  margin-right: 5px; 
+  z-index: 1; 
+}
+.heart-icon:hover {
+  color: red;
 }
 
 .product-card:hover {
@@ -109,6 +125,7 @@
 }
 
 .product-image {
+  
   flex: 1;
 }
 
