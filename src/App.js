@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ProductListing from "./containers/ProductListing";
 import Header from "./containers/Header";
-import "../src/css/All.css"
+import '../src/App.css'
 import ProductDetails from "./containers/ProductDetails";
 
 function App() {

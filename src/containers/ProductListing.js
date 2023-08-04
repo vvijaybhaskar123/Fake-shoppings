@@ -1,9 +1,10 @@
 import React, { useEffect, useCallback, useMemo } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import "../css/All.css"
+import '../App.css'
 import { setProducts } from "../redux/actions/productsActions";
 import ProductComponent from "./ProductComponent";
+import ImageComponent from "./ImageComponent";
 
 const ProductPage = () => {
   const products = useSelector((state) => state.allProducts.products);
@@ -23,7 +24,8 @@ const ProductPage = () => {
 
   console.log("Products :", products);
   return (
-    <div className="ui grid container">
+    <div >
+      <ImageComponent/>
       <ProductComponent />
     </div>
   );
